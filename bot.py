@@ -20,7 +20,7 @@ def message(payload):
     if BOT_ID != user_id:
         client.chat_postMessage(channel=channel_id, text=text)
 
-@app.route('/login-decide')
+@app.route('/login-decide', methods=['GET','POST'])
 def message_count():
     return Response, 200
 
