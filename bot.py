@@ -2,14 +2,12 @@ import slack
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from flask import Flask
 from slackeventsapi import SlackEventAdapter
 import config
 
-
-env_path = Path('.') / '.env'
-load_dotenv(dotenv_path=env_path)
-
-slack_event_adapter = SlackEventAdapter(config.SIGNING_SECRET, '/slack/events','https://egc-bailon-bot-slack.herokuapp.com/')
+app = Flask(__name__)
+slack_event_adapter = SlackEventAdapter(config.SIGNING_SECRET, '/slack/events',app)
 
 client = slack.WebClient(token=config.SLACK_TOKEN)
 BOT_ID = client.api_call("auth.test")['user_id']
@@ -24,4 +22,5 @@ def message(payload):
     if BOT_ID != user_id:
         client.chat_postMessage(channel=channel_id, text=text)
 
-
+if __name__ == "__main__":
+    app.run(debug=True)
