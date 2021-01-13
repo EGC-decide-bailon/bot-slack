@@ -1,7 +1,5 @@
 import slack
 import os
-from pathlib import Path
-from dotenv import load_dotenv
 from flask import Flask
 from slackeventsapi import SlackEventAdapter
 import config
