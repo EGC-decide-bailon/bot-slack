@@ -1,3 +1,4 @@
 slack
 flask==1.1.2
+slackeventsapi
 requests
