@@ -1,6 +1,6 @@
 import slack
 import os
-from flask import Flask
+from flask import Flask, Request, Response
 from slackeventsapi import SlackEventAdapter
 import config
 
@@ -19,6 +19,10 @@ def message(payload):
 
     if BOT_ID != user_id:
         client.chat_postMessage(channel=channel_id, text=text)
+
+@app.route('/login-decide')
+def message_count():
+    return Response, 200
 
 if __name__ == "__main__":
     app.run(debug=True)
