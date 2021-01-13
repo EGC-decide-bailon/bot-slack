@@ -4,8 +4,10 @@ import os
 
 #===Secret======
 
-#env_path = Path('.') / '.env'
-#load_dotenv(dotenv_path=env_path)
+
+#=====DECIDE-HEROKU========
+BASE_URL_HEROKU = "https://decide-voting.herokuapp.com/"
+API_BASE = "gateway/"
 
 
 SLACK_TOKEN = os.environ['TOKEN']
