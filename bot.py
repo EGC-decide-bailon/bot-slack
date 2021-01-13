@@ -15,6 +15,10 @@ BOT_ID = client.api_call("auth.test")['user_id']
 def message_count():
     data = request.form
     print(data)
+    user_id = data.get('user_id')
+    channel_id = data.get('channel_id')
+    client.chat_postMessage(channel=channel_id, text="recibido lolololol")
+    return Response(), 200
 
 if __name__ == "__main__":
     app.run(debug=True)
