@@ -41,3 +41,32 @@ Comandos disponibles en slack
 ## Como utilizarlos
 
 ### /info-comandos
+![info-comandos](Images/info-comandos1.jpg "Resultado de usar el comando")
+
+Cuando se utiliza el comando, el bot reponderá por conversación privada al usuario que le mandó el comando
+
+![info-comandos](Images/info-comandos2.png "")
+
+### /login-decide
+
+Al usar el comando y pasarle los parámetros solicitados, responderá confirmando si se ha podido iniciar sesión o no
+
+![login-decide](Images/login-decide.png "")
+
+### /votaciones-disponibles
+
+Muestra las votaciones disponibles en ese momento
+
+![votaciones-disponibles](Images/votaciones-disponibles.png "")
+
+### /detalles-votacion
+
+Muestra los detalles de la votación seleccionada
+
+![detalles-votacion](Images/detalles-votacion.png "")
+
+### /votar-decide
+
+Al usar el comando y ponerle los parámetros solicitados, responderá confirmando si se ha realizado correctamente la votación o no
+
+![votar-decide](Images/votar-decide.png "")
