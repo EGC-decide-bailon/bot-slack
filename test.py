@@ -3,22 +3,17 @@ import requests
 import json
 import sys
 import config
-import bot
-
-USER_1_USER = "user"
-USER_1_PASS = "rinoceronte2"
-USER_1_TOKEN = "f016cd06e314c5f02c14f7408329067a4cd92bc0"
+URL_BASE = 'https://decide-voting.herokuapp.com/'
+URL_GW = URL_BASE + 'gateway/'
 
 class TestMethods(unittest.TestCase):
 
-    def test_login(self):
+    def login_test_valido(self):
+        datos = {"username": "user", "password":"rinoceronte2"}
+        r = requests.post(URL_GW + 'authentication/login' + datos)
+        self.assertEqual(r.status_code,200)
 
-        # credentials = {"username": USER_1_USER, "password": USER_1_PASS}
-        
-        # consulta = "authentication/login/"
-
-        # url = config.BASE_URL_HEROKU + config.API_BASE + consulta
-        
-        # r = requests.post(url, credentials)
-        
-        self.assertEqual("brr", "brr")
+    def login_test_error(self):
+        datos = {"username": "pruebaMal", "password":"pruebaMal"}
+        r = requests.post(URL_GW + 'authentication/login' + datos)
+        self.assertEqual(r.status_code,401)
