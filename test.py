@@ -17,3 +17,6 @@ class TestMethods(unittest.TestCase):
         datos = {"username": "pruebaMal", "password":"pruebaMal"}
         r = requests.post(URL_GW + 'authentication/login' + datos)
         self.assertEqual(r.status_code,401)
+
+if __name__ == '__main__':
+    unittest.main()
